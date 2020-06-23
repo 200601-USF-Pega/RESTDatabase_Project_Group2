@@ -5,6 +5,12 @@ public class Person {
     private String lastName;
     private String reason;
 
+    public Person(String firstName, String lastName, String reason) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.reason = reason;
+    }
+
     public String getFirstName() {
         return firstName;
     }
