@@ -41,10 +41,9 @@ public class PersonDAODB implements  IPersonDAO {
 
     @Override
     public ArrayList<Person> getAllPeople() {
-        ArrayList<Person> result = null;
+        ArrayList<Person> result = new ArrayList<Person>();
 
         try {
-
 
             PreparedStatement selectAllStatement = connectionService.prepareStatement("SELECT * FROM dmvLine");
 
@@ -52,7 +51,7 @@ public class PersonDAODB implements  IPersonDAO {
 
             while(rs.next()){
 
-                Person p = new Person(rs.getString("firstname"),rs.getString("lastname"),rs.getNString("reason"));
+                Person p = new Person(rs.getString("firstname"),rs.getString("lastname"),rs.getString("reason"));
                 result.add(p);
             }
 
