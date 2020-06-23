@@ -1,0 +1,2 @@
+127.0.0.1 - - [23/Jun/2020:16:38:57 -0400] "GET /RESTDatabase HTTP/1.1" 404 - http-bio-10080-exec-1 125
+127.0.0.1 - - [23/Jun/2020:16:39:04 -0400] "GET /RESTDatabase/person/allpeople HTTP/1.1" 200 14 http-bio-10080-exec-2 724

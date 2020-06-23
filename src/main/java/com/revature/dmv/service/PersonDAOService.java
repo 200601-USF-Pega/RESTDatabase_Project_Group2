@@ -49,24 +49,24 @@ public class PersonDAOService {
 
     }
 
-    public void getPeople() {
-        try{
-
-            personDAODB = new PersonDAODB();
-
-        } catch(Exception e) {
-
-            e.getMessage();
-
-
-        }
-
-        ArrayList<ArrayList<String>> retrivedPerson = personDAODB.getAllPeople();
-        for (ArrayList<String> person : retrivedPerson){
-            System.out.println(person);
-        }
-
-    }
+//    public void getPeople() {
+//        try{
+//
+//            personDAODB = new PersonDAODB();
+//
+//        } catch(Exception e) {
+//
+//            e.getMessage();
+//
+//
+//        }
+//
+//        ArrayList<ArrayList<String>> retrivedPerson = personDAODB.getAllPeople();
+//        for (ArrayList<String> person : retrivedPerson){
+//            System.out.println(person);
+//        }
+//
+//    }
 
 
 }
