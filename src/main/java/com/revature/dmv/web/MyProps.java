@@ -2,9 +2,9 @@ package com.revature.dmv.web;
 
 public class MyProps {
 
-    public static String url = "jdbc:postgresql://drona.db.elephantsql.com:5432/pelefve";
-    public static String name = "pelefve";
-    public static String password = "YabO1-tY1u781YXgREQK21TMwS2fRC9";
+    public static String url = "postgres://gmvsetww:kKzpvGYg8rbWk00Ony6RlZPG6zEqNeT_@ruby.db.elephantsql.com:5432/gmvsetww";
+    public static String name = "gmvsetww";
+    public static String password = "kKzpvGYg8rbWk00Ony6RlZPG6zEqNeT_";
     String sorry;
 
 
