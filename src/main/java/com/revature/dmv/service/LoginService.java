@@ -1,24 +1,32 @@
 package com.revature.dmv.service;
 
-import javax.ws.rs.Consumes;
-import javax.ws.rs.GET;
-import javax.ws.rs.POST;
-import javax.ws.rs.Path;
+import javax.ws.rs.*;
 import javax.ws.rs.core.Response;
+import javax.ws.rs.core.UriBuilder;
+import java.net.URI;
+import java.net.URISyntaxException;
 
 @Path("/login")
 
 public class LoginService {
 
-@GET
-@Path("/check")
-@Consumes("application/json")
-    public Response check(String username, String password){
-    if(username.equals("admin")&& password.equals("password")){
-        System.out.println("Successfully logged in");
+@POST
+    public Response check(@FormParam("username") String username, @FormParam("password") String password) throws URISyntaxException {
+
+    if(username.equalsIgnoreCase("admin")){
+
+        if(password.equalsIgnoreCase("password")){
+
+            URI uri = UriBuilder.fromUri("../dmv.html").build();
+
+            return Response.temporaryRedirect(uri).build();
+
+        }
+
     }
-    return Response
-            .status(Response.Status.OK).build();
+
+    return Response.status(401).build();
+
 }
 
 }

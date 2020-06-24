@@ -16,6 +16,20 @@ import java.security.URIParameter;
 @Path("/person")
 public class PersonService {
 
+    @POST
+    @Path("/newperson/form")
+    public Response addNewPersonForm (@FormParam("firstname") String firstname, @FormParam("lastname") String lastname, @FormParam("reason") String reason) throws IOException {
+
+        PersonDAODB persondaodb = new PersonDAODB();
+
+        persondaodb.addPerson(new Person(firstname,lastname,reason));
+
+
+        return this.getAllPeople();
+    }
+
+
+
 
     @POST
     @Path("/newperson")
