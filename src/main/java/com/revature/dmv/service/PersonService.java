@@ -28,7 +28,7 @@ IPersonDAO personRepo = new PersonDAODB();
         persondaodb.addPerson(new Person(firstname,lastname,reason));
 
 
-        return this.getAllPeople();
+        return this.getAll();
     }
 
 
