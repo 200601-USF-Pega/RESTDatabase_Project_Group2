@@ -1,0 +1,106 @@
+<html>
+    <head>
+        <title>Login Outside</title>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+
+
+
+
+
+        <script>
+            window.addEventListener( "load", function () {
+            function sendData() {
+                        const XHR = new XMLHttpRequest();
+
+                        // Bind the FormData object and the form element
+                        const FD = new FormData( form );
+
+                        // Define what happens on successful data submission
+                        XHR.addEventListener( "load", function(event) {
+                            window.location.href("http://www.w3schools.com");
+                        //alert( event.target.responseText );
+                        } );
+
+                        // Define what happens in case of error
+                        XHR.addEventListener( "error", function( event ) {
+                        alert( 'Oops! Something went wrong.' );
+                        } );
+
+                        // Set up our request
+                        XHR.open( "POST", "http://localhost:10080/RESTDatabase/service/login" );
+
+                        // The data sent is what the user provided in the form
+                        //XHR.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                        XHR.send( FD );
+                    }
+                    
+                    // Access the form element...
+                    const form = document.getElementById( "myForm" );
+
+                    // ...and take over its submit event.
+                    form.addEventListener( "submit", function ( event ) {
+                        event.preventDefault();
+
+                        sendData();
+                } );
+            } );
+
+
+            function check(){
+
+
+                var formdata = new FormData();
+                var username = document.getElementById('username');
+                var password = document.getElementById('password');
+                formdata.append('username', username);
+                formdata.append('password', password);
+                var xhttp = new XMLHttpRequest();
+                
+                xhttp.onreadystatechange = function(){
+                
+
+                    var status = xhttp.status
+
+                    if(status > 199 && status < 300 && this.readyState > 3 ){
+
+                        window.location.href("http://www.w3schools.com");
+
+                    }
+
+
+                };
+
+                xhttp.open("POST", "http://localhost:10080/RESTDatabase/service/login", true)
+                xhttp.send(username, password);
+
+
+            }
+
+        </script>
+
+
+
+
+    </head>
+
+<body>
+
+
+
+
+<form id="myForm">
+    <div class="form-group">
+        <input type="text" name="username" id="username" placeholder="Enter username"><br>
+        <input type="text" name="password" id="password" placeholder="Enter password"><br>
+        <button type="submit" class="btn btn-success">Login</button>
+    </div>
+</form>
+
+
+
+</body>
+
+</html>
