@@ -1,1 +1,2 @@
-0:0:0:0:0:0:0:1 - - [24/Jun/2020:11:03:02 -0400] "GET /RESTDatabase HTTP/1.1" 404 - http-bio-10080-exec-1 26
+0:0:0:0:0:0:0:1 - - [24/Jun/2020:11:20:54 -0400] "POST /RESTDatabase/person/newperson HTTP/1.1" 204 - http-bio-10080-exec-2 715
+0:0:0:0:0:0:0:1 - - [24/Jun/2020:11:21:07 -0400] "GET /RESTDatabase/person/allpeople HTTP/1.1" 200 779 http-bio-10080-exec-3 161
