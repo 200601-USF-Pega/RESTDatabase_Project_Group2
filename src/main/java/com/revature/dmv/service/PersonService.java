@@ -1,5 +1,6 @@
 package com.revature.dmv.service;
 
+import com.revature.dmv.dao.IPersonDAO;
 import com.revature.dmv.dao.PersonDAODB;
 import com.revature.dmv.model.Person;
 
@@ -11,10 +12,12 @@ import org.codehaus.jackson.map.ObjectMapper;
 
 import java.io.IOException;
 import java.security.URIParameter;
+import java.util.ArrayList;
 
 
 @Path("/person")
 public class PersonService {
+IPersonDAO personRepo = new PersonDAODB();
 
     @POST
     @Path("/newperson/form")
@@ -53,6 +56,14 @@ public class PersonService {
                 .entity(response)
                 .type(MediaType.APPLICATION_JSON_TYPE)
                 .build();
+    }
+
+    @GET
+    @Path("/all")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response getAll() throws IOException {
+
+        return Response.ok((ArrayList<Person>)personRepo.getAllPeople()).build();
     }
 
 

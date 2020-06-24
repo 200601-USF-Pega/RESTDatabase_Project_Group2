@@ -23,7 +23,7 @@
     </init-param>
     <init-param>
       <param-name>com.sun.jersey.spi.container.ContainerResponseFilters</param-name>
-      <param-value>com.revature.controller.CorsFilter</param-value>
+      <param-value>com.revature.dmv.service.CorsFilter</param-value>
     </init-param>
     <load-on-startup>1</load-on-startup >
   </servlet>
@@ -31,17 +31,6 @@
     <servlet-name>Jersey Service</servlet-name>
     <url-pattern>/service/*</url-pattern>
   </servlet-mapping >
-
-
-
-
-
-
-
-
-
-
-
 
 
 
