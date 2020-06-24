@@ -1,2 +1,5 @@
-0:0:0:0:0:0:0:1 - - [24/Jun/2020:11:20:54 -0400] "POST /RESTDatabase/person/newperson HTTP/1.1" 204 - http-bio-10080-exec-2 715
-0:0:0:0:0:0:0:1 - - [24/Jun/2020:11:21:07 -0400] "GET /RESTDatabase/person/allpeople HTTP/1.1" 200 779 http-bio-10080-exec-3 161
+127.0.0.1 - - [24/Jun/2020:11:58:00 -0400] "GET /RESTDatabase HTTP/1.1" 302 - http-bio-10080-exec-1 0
+127.0.0.1 - - [24/Jun/2020:11:58:00 -0400] "GET /RESTDatabase/ HTTP/1.1" 304 - http-bio-10080-exec-2 8
+127.0.0.1 - - [24/Jun/2020:11:58:07 -0400] "POST /RESTDatabase/service/login HTTP/1.1" 307 - http-bio-10080-exec-3 16
+127.0.0.1 - - [24/Jun/2020:11:58:07 -0400] "POST /RESTDatabase/dmv.html HTTP/1.1" 200 1909 http-bio-10080-exec-4 2
+127.0.0.1 - - [24/Jun/2020:11:59:28 -0400] "POST /RESTDatabase/service/person/newperson/form HTTP/1.1" 200 1230 http-bio-10080-exec-6 664
