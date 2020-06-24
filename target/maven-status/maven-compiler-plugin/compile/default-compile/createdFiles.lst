@@ -4,5 +4,6 @@ com\revature\dmv\service\PersonService.class
 com\revature\dmv\web\ConnectionService.class
 com\revature\dmv\dao\PersonDAODB.class
 com\revature\dmv\model\Person.class
+com\revature\dmv\service\LoginService.class
 com\revature\dmv\web\MyProps.class
 com\revature\dmv\service\ValidationService.class
