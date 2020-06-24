@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function submitPerson() {
+            let person = [];
+            person.firstName = document.querySelector("#firstname").value;
+            person.lastName = document.querySelector("#lastname").value;
+            person.reason = document.querySelector("#reason").value;
+
+
+            var req = new XMLHttpRequest();
+            req.onreadystatechange = function () {
+                if (this.readyState > 3) {
+                    document.querySelector("#firstname").innerHTML = "";
+                    document.querySelector("#lastname").innerHTML = "";
+                    document.querySelector("#reason").innerHTML = "";
+                }
+            }
+
+            req.open("POST", "http://localhost:10080/RESTDatabase/service/person/newperson", true);
+            req.setRequestHeader('Content-Type', 'application/json');
+            req.send(JSON.stringify(person));
+        }
+    </script>
+</head>
+
+<body>
+
+<h2>Adding new user to DMV...</h2>
+
+<form method="post">
+    <div class="form-group">
+        <input type="text" name="firstname" id="firstname" placeholder="Enter firstname"><br>
+        <input type="text" name="lastname" id="lastname" placeholder="Enter lastname"><br>
+        <input type="text" name="reason" id="reason" placeholder="Enter reason"><br>
+        <button type="submit" class="btn btn-success" onClick="submitPerson()">New Person</button>
+    </div>
+</form>
+
+</body>
+
+</html>
