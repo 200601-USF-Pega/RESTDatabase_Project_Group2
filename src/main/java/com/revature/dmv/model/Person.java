@@ -1,11 +1,16 @@
 package com.revature.dmv.model;
 
+import javax.ws.rs.BeanParam;
+import javax.ws.rs.FormParam;
+import javax.ws.rs.QueryParam;
 import java.util.Objects;
 
 public class Person {
 
 	private String firstName;
+
 	private String lastName;
+
 	private String reason;
 
 	public Person(String firstName, String lastName, String reason)
@@ -13,6 +18,10 @@ public class Person {
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.reason = reason;
+	}
+
+	public Person(){
+
 	}
 
 	public String getFirstName()

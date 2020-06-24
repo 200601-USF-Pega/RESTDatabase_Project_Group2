@@ -9,6 +9,7 @@ import javax.ws.rs.core.Response;
 @Path("/login")
 
 public class LoginService {
+
 @GET
 @Path("/check")
 @Consumes("application/json")
