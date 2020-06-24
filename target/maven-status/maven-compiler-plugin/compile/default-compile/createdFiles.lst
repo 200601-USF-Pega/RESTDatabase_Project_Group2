@@ -1,3 +1,4 @@
+com\revature\dmv\web\CorsFilter.class
 com\revature\dmv\service\PersonDAOService.class
 com\revature\dmv\dao\IPersonDAO.class
 com\revature\dmv\service\PersonService.class
