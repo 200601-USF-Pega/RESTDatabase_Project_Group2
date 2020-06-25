@@ -8,9 +8,11 @@ import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
+import com.sun.jersey.multipart.FormDataParam;
 import org.codehaus.jackson.map.ObjectMapper;
 
 import java.io.IOException;
+import java.net.URISyntaxException;
 import java.security.URIParameter;
 import java.util.ArrayList;
 
@@ -34,12 +36,26 @@ IPersonDAO personRepo = new PersonDAODB();
 
 
 
+//    @POST
+//    @Path("/newperson")
+//    @Consumes(MediaType.APPLICATION_JSON)
+//    public void addNewPerson (Person person){
+//        PersonDAODB persondaodb = new PersonDAODB();
+//        persondaodb.addPerson(person);
+//
+//    }
+
+
     @POST
     @Path("/newperson")
-    @Consumes(MediaType.APPLICATION_JSON)
-    public void addNewPerson (Person person){
+    @Consumes(MediaType.MULTIPART_FORM_DATA)
+    public Response addNewPerson(@FormDataParam("firstname") String firstname, @FormDataParam("lastname") String lastname, @FormDataParam("reason") String reason) throws URISyntaxException {
+        System.out.println(firstname + lastname + reason);
+        Person newPerson = new Person(firstname, lastname, reason);
         PersonDAODB persondaodb = new PersonDAODB();
-        persondaodb.addPerson(person);
+        persondaodb.addPerson(newPerson);
+
+        return Response.status(401).build();
 
     }
 
